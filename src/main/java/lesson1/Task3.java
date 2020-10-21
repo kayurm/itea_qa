@@ -12,9 +12,12 @@ public class Task3 {
         String s = "Kate";
         int i=0;
         while(i<5) {
-            System.out.println(
-                    s + " " + s + " " + s + " " + s + " " + s + " " + s + " " + s + " " + s + " " + s + " "
-                            + s);
+            for (int j = 0; j < 10; j++) {
+                System.out.print(s+" ");
+                if (j == 9) {
+                    System.out.print("\n");
+                }
+            }
             i++;
         }
     }
