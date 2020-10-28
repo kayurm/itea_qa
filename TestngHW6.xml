@@ -1,0 +1,8 @@
+<suite name="L6">
+    <parameter name="stringIn" value="Hello World!"/>
+    <test name="T1">
+        <class name="test.java.lesson1.Task1"/>
+        <class name="test.java.lesson1.Task2"/>
+        <class name="test.java.lesson1.Task5"/>
+    </test>
+</suite>
