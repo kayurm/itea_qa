@@ -16,7 +16,7 @@ public class Task5 {
         return buf.reverse().toString();
     }
 
-    @Parameters({"stringIn"}) //<- this doesn't work for me
+    @Parameters({"stringIn"})
     @Test
     public static void testReverse(@Optional("Some optional string") String stringIn){
         char firstLetter = stringIn.charAt(0);

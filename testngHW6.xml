@@ -1,8 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="L6">
     <parameter name="stringIn" value="Hello World!"/>
+    <parameter name="stringIn" value="Madam :)"/>
     <test name="T1">
-        <class name="test.java.lesson1.Task1"/>
-        <class name="test.java.lesson1.Task2"/>
-        <class name="test.java.lesson1.Task5"/>
+        <classes>
+            <class name="lesson1.Task1"/>
+            <class name="lesson1.Task2"/>
+            <class name="lesson1.Task5"/>
+        </classes>
     </test>
 </suite>
