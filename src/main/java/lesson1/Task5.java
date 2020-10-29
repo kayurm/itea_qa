@@ -1,6 +1,7 @@
 package lesson1;
 
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -15,9 +16,9 @@ public class Task5 {
         return buf.reverse().toString();
     }
 
-    @Parameters({stringIn}) //<- this doesn't work for me
+    @Parameters({"stringIn"}) //<- this doesn't work for me
     @Test
-    public static void testReverse(String stringIn){
+    public static void testReverse(@Optional("Some optional string") String stringIn){
         char firstLetter = stringIn.charAt(0);
         char lastLetter = stringIn.charAt(stringIn.length()-1);
         String reversed = reverse(stringIn);
