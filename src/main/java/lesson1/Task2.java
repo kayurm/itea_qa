@@ -34,7 +34,6 @@ public class Task2 {
         List<String> arList = Arrays.asList(printName(name, columnsQty, rowsQty).split("\n"));
         int actualResult = arList.stream().mapToInt(row -> (int) Arrays.stream(row.split(" ")).count()).sum();
         Assert.assertEquals(expectedResult, actualResult, "Quantity of names printed is incorrect");
-
     }
 
     @DataProvider(name = "provider")
