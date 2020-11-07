@@ -9,8 +9,6 @@ import pages.signin.CreateAccountPage;
 public class CreateAccountTest extends BaseTest{
 
     private MainPage mainPage;
-    private CreateAccountPage createAccountPage;
-
 
     @BeforeMethod
     public void initTest(){
