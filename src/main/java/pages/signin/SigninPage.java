@@ -2,8 +2,11 @@ package pages.signin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pages.BasePage;
+
+import static org.testng.Assert.assertTrue;
 
 public class SigninPage extends BasePage {
 
@@ -19,10 +22,16 @@ public class SigninPage extends BasePage {
     }
 
     public CreateAccountPage clickCreateAmazonAccount(){
-        Assert.assertTrue(driver.findElement(createAmazonAccountButton).isDisplayed());
-        driver.findElement(createAmazonAccountButton).click();
+        LOG.info("Create account method");
+        WebElement createAccElem = driver.findElement(createAmazonAccountButton);
+        LOG.debug("Asserting create account button is present");
+        assertTrue(createAccElem.isDisplayed());
+        LOG.debug("Clicking create account button");
+        createAccElem.click();
         CreateAccountPage createAccPage = new CreateAccountPage(driver);
-        Assert.assertTrue(driver.findElement(createAccPage.getCreateAccountLabel()).isDisplayed());
+        LOG.debug("Asserting create account page is opened");
+        assertTrue(driver.findElement(createAccPage.getCreateAccountLabel())
+                .isDisplayed());
         return createAccPage;
 
     }

@@ -26,7 +26,6 @@ public abstract class BasePage {
     public BasePage clickIfDisplayed(By selector){
         if (isDisplayed(selector)) driver.findElement(selector).click();
         else LOG.info("no such element: "+selector);
-
         return this;
     }
 }

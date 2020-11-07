@@ -2,8 +2,13 @@ package pages.signin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.BasePage;
+
+import static org.testng.Assert.*;
 
 public class CreateAccountPage extends BasePage {
 
@@ -17,10 +22,12 @@ public class CreateAccountPage extends BasePage {
     private final By passwordFieldValidationError = By.xpath("//div[contains(text(),'Enter your password')]");
     private final By reenterPasswordField = By.name("passwordCheck");
     private final By reenterPasswordFieldValidationError = By.xpath("//div[contains(text(),'Type your password again')]");
+    WebDriverWait wait;
 
 
     public CreateAccountPage (WebDriver driver) {
         super(driver);
+         wait = new WebDriverWait(driver, 60);
     }
 
     public By getCreateAccountLabel() {
@@ -28,12 +35,13 @@ public class CreateAccountPage extends BasePage {
     }
 
     public CreateAccountPage clickCreateYourAmazonAccount(){
+        LOG.info("Click create your amazon account");
         driver.findElement(createYourAmazonAccountButton).click();
         return this;
     }
 
     public CreateAccountPage fillFieldsAndClickCreate(String name, String email, String password, String reenterPassword){
-
+        LOG.info("Fill fields and click create");
         driver.findElement(nameField).sendKeys(name);
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
@@ -42,57 +50,57 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
-    public CreateAccountPage validateNameField(String name){
-        if (name.equals("")){
-            Assert.assertEquals(driver.findElement(nameField)
-                    .getCssValue("boarder-color"), "#d00");
-            Assert.assertTrue(driver.findElement(nameFieldValidationError).isDisplayed());
+    //this method is used in the next public validate methods
+    private void validateField(WebElement fieldIn, WebElement fieldValidationMessage, String valueIn){
+        if (valueIn.equals("")){
+            LOG.debug("Field was left empty, validating red frame and the error message");
+//            assertEquals(fieldIn
+//                    .getCssValue("border-top-color"),
+//                    "rgba(209, 85, 33, 1)",
+//                    "Expected red frame but found some other color");
+            assertTrue(fieldValidationMessage.isDisplayed());
         }else{
-            Assert.assertEquals(driver.findElement(nameField)
-                    .getCssValue("boarder-color"), "");
-            Assert.assertFalse(driver.findElement(nameFieldValidationError).isDisplayed());
+            LOG.debug("Field was filled, validating no red frame and no error message appeared");
+//            assertEquals(
+//                    fieldIn.getCssValue("border-top-color"),
+//                    "rgba(148, 148, 148, 1)",
+//                    "Expected black frame but found some other color");
+            assertFalse(fieldValidationMessage.isDisplayed());
         }
+    }
+
+    public CreateAccountPage validateNameField(String name){
+        LOG.info("Validate name field");
+        validateField(
+                driver.findElement(nameField),
+                driver.findElement(nameFieldValidationError),
+                name);
         return this;
     }
     public CreateAccountPage validateEmailField(String email){
-
-        if (email.equals("")){
-            Assert.assertEquals(driver.findElement(emailField)
-                    .getCssValue("boarder-color"), "#d00");
-            Assert.assertTrue(driver.findElement(emailFieldValidationError).isDisplayed());
-        }else{
-            Assert.assertEquals(driver.findElement(emailField)
-                    .getCssValue("boarder-color"), "");
-            Assert.assertFalse(driver.findElement(emailFieldValidationError).isDisplayed());
-        }
+        LOG.info("Validate email field");
+        validateField(
+                driver.findElement(emailField),
+                driver.findElement(emailFieldValidationError),
+                email);
         return this;
     }
 
     public CreateAccountPage validatePasswordField(String password){
-
-        if (password.equals("")){
-            Assert.assertEquals(driver.findElement(passwordField)
-                    .getCssValue("boarder-color"), "#d00");
-            Assert.assertTrue(driver.findElement(passwordFieldValidationError).isDisplayed());
-        }else{
-            Assert.assertEquals(driver.findElement(passwordField)
-                    .getCssValue("boarder-color"), "");
-            Assert.assertFalse(driver.findElement(passwordFieldValidationError).isDisplayed());
-        }
+        LOG.info("Validate password field");
+        validateField(
+                driver.findElement(passwordField),
+                driver.findElement(passwordFieldValidationError),
+                password);
         return this;
     }
 
     public CreateAccountPage validateReenterPasswordField(String reenterPassword){
-
-        if (reenterPassword.equals("")){
-            Assert.assertEquals(driver.findElement(reenterPasswordField)
-                    .getCssValue("boarder-color"), "#d00");
-            Assert.assertTrue(driver.findElement(reenterPasswordFieldValidationError).isDisplayed());
-        }else{
-            Assert.assertEquals(driver.findElement(reenterPasswordField)
-                    .getCssValue("boarder-color"), "");
-            Assert.assertFalse(driver.findElement(reenterPasswordFieldValidationError).isDisplayed());
-        }
+        LOG.info("Validate reenter password field");
+        validateField(
+                driver.findElement(reenterPasswordField),
+                driver.findElement(reenterPasswordFieldValidationError),
+                reenterPassword);
         return this;
     }
 }

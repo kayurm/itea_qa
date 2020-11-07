@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import pages.signin.SigninPage;
 
+import static org.testng.Assert.assertTrue;
+
 
 public class MainPage extends Header {
 
@@ -21,7 +23,7 @@ public class MainPage extends Header {
 
     public MainPage openTodaysDeals() {
         clickIfDisplayed(todaysDealsButton);
-        Assert.assertTrue(driver.findElement(dealsAndPromotionsLabel).isDisplayed());
+        assertTrue(driver.findElement(dealsAndPromotionsLabel).isDisplayed());
         return this;
     }
 
@@ -46,9 +48,12 @@ public class MainPage extends Header {
         LOG.info("Open sign in page");
         SigninPage signInPage = new SigninPage(driver);
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(helloSingInMenu)).click()
-                .build().perform();
-        Assert.assertTrue(driver.findElement(signInPage.getSignInLabel()).isDisplayed());
+        action.moveToElement(driver.findElement(helloSingInMenu))
+                .click()
+                .build()
+                .perform();
+        assertTrue(driver.findElement(signInPage.getSignInLabel())
+                .isDisplayed());
         return signInPage;
     }
 }

@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Lesson7">
-    <test name="Tests">
-        <packages>
-            <package name="test.java.tests.ui"/>
-        </packages>
+    <test name="Todays deals test">
+<!--        <packages>-->
+<!--            <package name="test.java.tests.ui"/>-->
+<!--        </packages>-->
+
+        <classes>
+            <class name="tests.ui.TodaysDealsTest"/>
+        </classes>
+
     </test>
 </suite>
