@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.BasePage;
 
+import javax.print.attribute.Attribute;
+
 import static org.testng.Assert.*;
 
 public class CreateAccountPage extends BasePage {
@@ -51,16 +53,19 @@ public class CreateAccountPage extends BasePage {
     }
 
     //this method is used in the next public validate methods
-    private void validateField(WebElement fieldIn, WebElement fieldValidationMessage, String valueIn){
+    private void validateField(WebElement fieldIn, WebElement fieldValidationMessage, String valueIn) throws InterruptedException {
         if (valueIn.equals("")){
             LOG.debug("Field was left empty, validating red frame and the error message");
+            wait.until(ExpectedConditions.visibilityOf(fieldIn).andThen(fieldIn.getAttribute("border-top-color"))=="rgba(221, 0, 0, 1)")));
+            //Thread.sleep(5000);
             assertEquals(fieldIn
                     .getCssValue("border-top-color"),
-                    "rgba(209, 85, 33, 1)",
+                    "rgba(221, 0, 0, 1)",
                     "Expected red frame but found some other color");
             assertTrue(fieldValidationMessage.isDisplayed());
         }else{
             LOG.debug("Field was filled, validating no red frame and no error message appeared");
+            //Thread.sleep(5000);
             assertEquals(
                     fieldIn.getCssValue("border-top-color"),
                     "rgba(148, 148, 148, 1)",
@@ -69,7 +74,7 @@ public class CreateAccountPage extends BasePage {
         }
     }
 
-    public CreateAccountPage validateNameField(String name){
+    public CreateAccountPage validateNameField(String name) throws InterruptedException {
         LOG.info("Validate name field");
         validateField(
                 driver.findElement(nameField),
@@ -77,7 +82,7 @@ public class CreateAccountPage extends BasePage {
                 name);
         return this;
     }
-    public CreateAccountPage validateEmailField(String email){
+    public CreateAccountPage validateEmailField(String email) throws InterruptedException {
         LOG.info("Validate email field");
         validateField(
                 driver.findElement(emailField),
@@ -86,7 +91,7 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
-    public CreateAccountPage validatePasswordField(String password){
+    public CreateAccountPage validatePasswordField(String password) throws InterruptedException {
         LOG.info("Validate password field");
         validateField(
                 driver.findElement(passwordField),
@@ -95,7 +100,7 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
-    public CreateAccountPage validateReenterPasswordField(String reenterPassword){
+    public CreateAccountPage validateReenterPasswordField(String reenterPassword) throws InterruptedException {
         LOG.info("Validate reenter password field");
         validateField(
                 driver.findElement(reenterPasswordField),

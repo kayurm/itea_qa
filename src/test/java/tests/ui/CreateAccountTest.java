@@ -16,7 +16,7 @@ public class CreateAccountTest extends BaseTest{
     }
 
     @Test
-    public void createAccountNegativeAllEmptyFieldsTest(){
+    public void createAccountNegativeAllEmptyFieldsTest() throws InterruptedException {
         LOG.info("Test -> can't create an account when all fields left empty");
         String name = "";
         String email = "";
@@ -33,7 +33,7 @@ public class CreateAccountTest extends BaseTest{
     }
 
     @Test
-    public void createAccountNegativeReenterPasswordEmptyTest(){
+    public void createAccountNegativeReenterPasswordEmptyTest() throws InterruptedException {
         LOG.info("Test -> can't create an account when the fields are valid, except for Reenter field being empty");
         String name = "ValidName";
         String email = "validEmail@gmail.com";
