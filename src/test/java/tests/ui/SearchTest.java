@@ -21,7 +21,7 @@ public class SearchTest extends BaseTest {
         String iPhone = "iPhone";
         assertTrue(mainPage
                 .searchFor(iPhone)
-                .verifySearchResultContainsValue(iPhone));
+                .verifyEachSearchResultContainsValue(iPhone));
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SearchTest extends BaseTest {
         String samsung = "Samsung";
         assertTrue(mainPage
                 .searchFor(samsung)
-                .verifySearchResultContainsValue(samsung));
+                .verifyEachSearchResultContainsValue(samsung));
 
     }
 }

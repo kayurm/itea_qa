@@ -54,17 +54,17 @@ public class CreateAccountPage extends BasePage {
     private void validateField(WebElement fieldIn, WebElement fieldValidationMessage, String valueIn){
         if (valueIn.equals("")){
             LOG.debug("Field was left empty, validating red frame and the error message");
-//            assertEquals(fieldIn
-//                    .getCssValue("border-top-color"),
-//                    "rgba(209, 85, 33, 1)",
-//                    "Expected red frame but found some other color");
+            assertEquals(fieldIn
+                    .getCssValue("border-top-color"),
+                    "rgba(209, 85, 33, 1)",
+                    "Expected red frame but found some other color");
             assertTrue(fieldValidationMessage.isDisplayed());
         }else{
             LOG.debug("Field was filled, validating no red frame and no error message appeared");
-//            assertEquals(
-//                    fieldIn.getCssValue("border-top-color"),
-//                    "rgba(148, 148, 148, 1)",
-//                    "Expected black frame but found some other color");
+            assertEquals(
+                    fieldIn.getCssValue("border-top-color"),
+                    "rgba(148, 148, 148, 1)",
+                    "Expected black frame but found some other color");
             assertFalse(fieldValidationMessage.isDisplayed());
         }
     }

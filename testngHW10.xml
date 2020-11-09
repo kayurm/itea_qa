@@ -2,7 +2,7 @@
 <suite name="Lesson8">
     <test name="Iphone search tests">
         <classes>
-            <class name="tests.ui.FilterTest"/>
+            <class name="tests.ui.LaptopBrandFilterTest"/>
         </classes>
     </test>
 </suite>

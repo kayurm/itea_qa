@@ -5,9 +5,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import pages.signin.SigninPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -19,8 +19,13 @@ public class MainPage extends Header {
     private final By firstDealPrice = By
             .xpath("//div[@id='100_dealView_0']//span[@class='gb-font-size-medium inlineBlock unitLineHeight dealPriceText']']");
     private final By searchField = By.id("twotabsearchtextbox");
-    private final By allSearchResults = By.className("a-size-medium a-color-base a-text-normal'");
-    WebElement element;
+    private final By searchResultListBy = By.className("a-size-medium a-color-base a-text-normal'");
+    private final By brandFilterListBy = By.xpath("//li[(contains(@id, 'p_89'))]");
+    private String brandValue;
+    private By brandFilterValue = By.xpath(String.format("//span[text()='%s']", brandValue));
+
+
+    WebElement elem;
 
 
     public MainPage(WebDriver driver) {
@@ -50,7 +55,7 @@ public class MainPage extends Header {
         return new float[]{minPrice, maxPrice};
     }
 
-    public SigninPage openSigninPage(){
+    public SigninPage openSigninPage() {
         LOG.info("Open sign in page");
         SigninPage signInPage = new SigninPage(driver);
         Actions action = new Actions(driver);
@@ -63,23 +68,62 @@ public class MainPage extends Header {
         return signInPage;
     }
 
-    public MainPage searchFor(String searchValue){
-        LOG.info("Searching for: "+searchValue);
-        element = driver.findElement(searchField);
-        element.sendKeys(searchValue);
-        element.sendKeys(Keys.ENTER);
+    public MainPage searchFor(String searchValue) {
+        LOG.info("Searching for: " + searchValue);
+        elem = driver.findElement(searchField);
+        elem.sendKeys(searchValue);
+        elem.sendKeys(Keys.ENTER);
         return this;
     }
 
-    public boolean verifySearchResultContainsValue(String value){
-        LOG.info("Verifying that returned search result contains value: "+value);
-        List<WebElement> searchResult = driver.findElements(allSearchResults);
-        for (WebElement result:searchResult) {
+    public boolean verifyEachSearchResultContainsValue(String value) {
+        LOG.info("Verifying that returned search result contains value: " + value);
+        List<WebElement> searchResult = driver.findElements(searchResultListBy);
+        for (WebElement result : searchResult) {
             if (!result.getText().contains(value)) return false;
         }
         return true;
     }
 
+    //private - helper
+    private By defineFilterLocator(String filterType) {
+        LOG.info("Defying filter's locator by filter type: " + filterType);
+        By filterValuesLocator = null;
+        switch (filterType.toLowerCase()) {
+            case "brand":
+                filterValuesLocator = brandFilterListBy;
+                break;
+            case "avg. customer review":
+                LOG.warn("Filter 'by avg. customer review''s locator not yet defined!!");
+            default:
+                LOG.warn("This locator not yet defined - filter by type: " + filterType);
+        }
+        return filterValuesLocator;
+    }
 
+    //for dataProvider
+    public List<String> getFilterValues(String filterType) {
+        LOG.info("Getting all filter values for the filter: " + filterType);
+        //List<WebElement> filterValuesList = driver.findElements(defineFilterLocator(filterType));
+        List<String> filterValuesList = new ArrayList<>();
+
+//        driver.findElements(By.xpath("//li[(contains(@id, 'p_89'))]")).forEach(
+//                t-> filterValuesList.add(t.getAttribute("aria-label")));
+
+        driver.findElements(defineFilterLocator(filterType)).forEach(
+                t -> filterValuesList.add(t.getAttribute("aria-label")));
+
+
+        return filterValuesList;
+    }
+
+
+    public MainPage setFilterBy(String filterType, String filterValue) {
+        LOG.info("Setting filter by type/value: " + filterType + "/" + filterValue);
+        By filterLocator = defineFilterLocator(filterType);
+        brandValue = filterValue;
+        driver.findElement(brandFilterValue).click();
+        return this;
+    }
 }
 

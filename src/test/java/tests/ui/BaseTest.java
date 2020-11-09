@@ -7,10 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import utils.ScreenShot;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,8 +21,8 @@ public abstract class BaseTest {
     protected WebDriver driver;
     protected final Logger LOG = LogManager.getLogger(this.getClass().getSimpleName());
 
-    @BeforeMethod
-    public void setUp() {
+    public void driverSetup(){
+
 //        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver/chromedriver.exe");
 //        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("--incognito");
@@ -36,8 +38,14 @@ public abstract class BaseTest {
         driver.get("https://amazon.com");
     }
 
+    @BeforeMethod
+    public void setUp() {
+        driverSetup();
+    }
+
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult testResult) {
+        new ScreenShot(driver).takeScreenshot(testResult);
         driver.close();
     }
 }
