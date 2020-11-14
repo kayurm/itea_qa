@@ -1,8 +1,8 @@
 package test.java.tests;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseTest {
 
     protected WebDriver driver;
-    protected final Logger LOG = LogManager.getLogger(this.getClass().getSimpleName());
+    protected Logger LOG = LogManager.getLogger(this.getClass().getSimpleName());
 
     public void driverSetup(){
 
@@ -44,6 +44,6 @@ public abstract class BaseTest {
     @AfterMethod
     public void tearDown(ITestContext iTestContext) {
         //new test.java.utils.Screenshot(driver).takeScreenshot(testResult);
-        driver.close();
+        driver.quit();
     }
 }
