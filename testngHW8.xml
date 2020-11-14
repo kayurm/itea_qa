@@ -1,8 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Lesson8">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"/>
+    </listeners>
     <test name="Create account tests">
         <classes>
-            <class name="tests.ui.CreateAccountTest"/>
+            <class name="test.java.tests.CreateAccountTest"/>
         </classes>
     </test>
 </suite>

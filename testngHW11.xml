@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Lesson10">
+<suite name="Lesson11" parallel="methods" thread-count="2">
     <listeners>
         <listener class-name="test.java.utils.Listener"/>
         <listener class-name="test.java.utils.AnnotationTransformer"/>
     </listeners>
-    <test name="Laptop filters test">
+    <test name="Failing tests">
         <classes>
-            <class name="test.java.tests.LaptopBrandFilterTest"/>
+            <class name="test.java.tests.DummyTest"/>
         </classes>
     </test>
 </suite>

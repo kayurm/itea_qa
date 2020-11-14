@@ -1,12 +1,10 @@
-package tests.ui;
+package test.java.tests;
 
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.landing.MainPage;
-import pages.signin.CreateAccountPage;
+import main.java.pages.landing.MainPage;
 
-public class CreateAccountTest extends BaseTest{
+public class CreateAccountTest extends BaseTest {
 
     private MainPage mainPage;
 

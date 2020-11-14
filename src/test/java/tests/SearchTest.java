@@ -1,8 +1,8 @@
-package tests.ui;
+package test.java.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.landing.MainPage;
+import main.java.pages.landing.MainPage;
 
 import static org.testng.Assert.assertTrue;
 

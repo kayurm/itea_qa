@@ -1,18 +1,15 @@
-package tests.ui;
+package test.java.tests;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.testng.ITestResult;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import utils.ScreenShot;
+import test.java.utils.PropertyLoader;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,17 +32,18 @@ public abstract class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://amazon.com");
+        driver.get(PropertyLoader.loadProperty("url"));
     }
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp(ITestContext iTestContext) {
         driverSetup();
+        iTestContext.setAttribute("driver", driver);
     }
 
     @AfterMethod
-    public void tearDown(ITestResult testResult) {
-        new ScreenShot(driver).takeScreenshot(testResult);
+    public void tearDown(ITestContext iTestContext) {
+        //new test.java.utils.Screenshot(driver).takeScreenshot(testResult);
         driver.close();
     }
 }

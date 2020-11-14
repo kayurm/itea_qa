@@ -1,11 +1,10 @@
-package tests.ui;
+package test.java.tests;
 
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.landing.MainPage;
+import main.java.pages.landing.MainPage;
 
 import java.util.List;
 
@@ -15,17 +14,17 @@ public class LaptopBrandFilterTest extends BaseTest {
 
     private MainPage mainPage;
     private List<String> brandList;
-    private String filterValue = "laptop";
-    private String filterType = "laptop";
+    private String searchValue = "laptop";
+    private String filterType = "Brand";
 
     @BeforeClass
     public void getFilterValues() {
         driverSetup();
         mainPage = new MainPage(driver);
 
-        LOG.info("Getting the filter's list of values, for the data provider");
+        LOG.debug("Getting the filter's list of values, for the data provider");
         brandList = mainPage
-                .searchFor(filterValue)
+                .searchFor(searchValue)
                 .getFilterValues(filterType);
         driver.close();
     }
@@ -49,8 +48,8 @@ public class LaptopBrandFilterTest extends BaseTest {
         LOG.info("Test -> notebook filters verification");
 
         assertTrue(mainPage
-                .searchFor(filterValue)
-                .setFilterBy(brand, filterValue)
+                .searchFor(searchValue)
+                .setFilterBy(brand)
                 .verifyEachSearchResultContainsValue(brand));
     }
 }

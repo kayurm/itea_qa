@@ -1,12 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Lesson7">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"/>
+    </listeners>
     <test name="Todays deals test">
 <!--        <packages>-->
 <!--            <package name="test.java.tests.ui"/>-->
 <!--        </packages>-->
 
         <classes>
-            <class name="tests.ui.TodaysDealsTest"/>
+            <class name="test.java.tests.TodaysDealsTest"/>
         </classes>
 
     </test>

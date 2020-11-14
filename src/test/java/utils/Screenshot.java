@@ -1,4 +1,4 @@
-package utils;
+package test.java.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class ScreenShot {
+public class Screenshot {
 
     private final String delimiter = System.getProperty("os.name").toLowerCase().contains("windows")? "\\":"/";
     private WebDriver driver;
 
-    public ScreenShot(WebDriver driver) {
+    public Screenshot(WebDriver driver) {
         this.driver = driver;
     }
 
