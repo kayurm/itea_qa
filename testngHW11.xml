@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Lesson11" parallel="methods" thread-count="2">
+<!--<suite name="Lesson11" parallel="methods" thread-count="2">-->
+<suite name="Lesson11">
     <listeners>
         <listener class-name="test.java.utils.Listener"/>
         <listener class-name="test.java.utils.AnnotationTransformer"/>
     </listeners>
-    <test name="Failing tests">
+    <test name="Failing dummy tests">
         <classes>
             <class name="test.java.tests.DummyTest"/>
         </classes>

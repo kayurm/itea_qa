@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class Screenshot {
 
@@ -31,12 +32,10 @@ public class Screenshot {
                     + delimiter + "screenshot"
                     + delimiter + testResult.getTestClass().getName().replace(".", delimiter)
                     + delimiter + testResult.getMethod().getConstructorOrMethod().getName()
-                    + ".png"
+                    + "-" + new Date().getTime() + ".png"
             ));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
