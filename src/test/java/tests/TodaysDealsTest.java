@@ -1,8 +1,8 @@
-package tests.ui;
+package test.java.tests;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.landing.MainPage;
+import main.java.pages.landing.MainPage;
 
 public class TodaysDealsTest extends BaseTest {
 

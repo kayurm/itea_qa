@@ -1,11 +1,12 @@
-package pages.landing;
+package main.java.pages.landing;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import pages.signin.SigninPage;
+import main.java.pages.signin.SigninPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 import static org.testng.Assert.assertTrue;
 
 
-public class MainPage extends Header {
+public class MainPage extends main.java.pages.landing.Header {
 
     private final By dealsAndPromotionsLabel = By.xpath("//b[text()='Deals and Promotions']");
     private final By firstDealPrice = By
@@ -21,11 +22,9 @@ public class MainPage extends Header {
     private final By searchField = By.id("twotabsearchtextbox");
     private final By searchResultListBy = By.className("a-size-medium a-color-base a-text-normal'");
     private final By brandFilterListBy = By.xpath("//li[(contains(@id, 'p_89'))]");
-    private String brandValue;
-    private By brandFilterValue = By.xpath(String.format("//span[text()='%s']", brandValue));
-
-
-    WebElement elem;
+    private By seeMoreFilters = By.xpath("//ul[@aria-labelledby='p_89-title']//span[text()='See more']");
+    private String brandFilterValueWildString = "//span[text()='%s']";
+    private WebElement elem;
 
 
     public MainPage(WebDriver driver) {
@@ -101,14 +100,10 @@ public class MainPage extends Header {
         return filterValuesLocator;
     }
 
-    //for dataProvider
+    //for the dataProvider
     public List<String> getFilterValues(String filterType) {
         LOG.info("Getting all filter values for the filter: " + filterType);
-        //List<WebElement> filterValuesList = driver.findElements(defineFilterLocator(filterType));
         List<String> filterValuesList = new ArrayList<>();
-
-//        driver.findElements(By.xpath("//li[(contains(@id, 'p_89'))]")).forEach(
-//                t-> filterValuesList.add(t.getAttribute("aria-label")));
 
         driver.findElements(defineFilterLocator(filterType)).forEach(
                 t -> filterValuesList.add(t.getAttribute("aria-label")));
@@ -118,11 +113,19 @@ public class MainPage extends Header {
     }
 
 
-    public MainPage setFilterBy(String filterType, String filterValue) {
-        LOG.info("Setting filter by type/value: " + filterType + "/" + filterValue);
-        By filterLocator = defineFilterLocator(filterType);
-        brandValue = filterValue;
-        driver.findElement(brandFilterValue).click();
+    public MainPage setFilterBy(String filterValue) {
+        LOG.info("Setting filter by value: " + filterValue);
+
+        //first expand the list to all the filters become visible
+        elem=driver.findElement(seeMoreFilters);
+        wait.until(ExpectedConditions.visibilityOf(elem));
+        elem.click();
+
+        //then set the filter
+        driver.findElement(
+                By.xpath(String.format(
+                        brandFilterValueWildString, filterValue)))
+                .click();
         return this;
     }
 }

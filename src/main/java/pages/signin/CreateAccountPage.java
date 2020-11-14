@@ -1,14 +1,11 @@
-package pages.signin;
+package main.java.pages.signin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import pages.BasePage;
-
-import javax.print.attribute.Attribute;
+import main.java.pages.BasePage;
 
 import static org.testng.Assert.*;
 
@@ -29,7 +26,7 @@ public class CreateAccountPage extends BasePage {
 
     public CreateAccountPage (WebDriver driver) {
         super(driver);
-         wait = new WebDriverWait(driver, 60);
+         wait = new WebDriverWait(driver, 5);
     }
 
     public By getCreateAccountLabel() {
@@ -56,8 +53,11 @@ public class CreateAccountPage extends BasePage {
     private void validateField(WebElement fieldIn, WebElement fieldValidationMessage, String valueIn) throws InterruptedException {
         if (valueIn.equals("")){
             LOG.debug("Field was left empty, validating red frame and the error message");
-            wait.until(ExpectedConditions.visibilityOf(fieldIn).andThen(fieldIn.getAttribute("border-top-color"))=="rgba(221, 0, 0, 1)")));
-            //Thread.sleep(5000);
+
+            wait.until(ExpectedConditions.and(
+                    ExpectedConditions.visibilityOf(fieldIn),
+                    (d) -> fieldIn.getCssValue("border-top-color").equals("rgba(221, 0, 0, 1)")
+            ));
             assertEquals(fieldIn
                     .getCssValue("border-top-color"),
                     "rgba(221, 0, 0, 1)",
@@ -65,7 +65,10 @@ public class CreateAccountPage extends BasePage {
             assertTrue(fieldValidationMessage.isDisplayed());
         }else{
             LOG.debug("Field was filled, validating no red frame and no error message appeared");
-            //Thread.sleep(5000);
+            wait.until(ExpectedConditions.and(
+                    ExpectedConditions.visibilityOf(fieldIn),
+                    (d) -> fieldIn.getCssValue("border-top-color").equals("rgba(148, 148, 148, 1)")
+            ));
             assertEquals(
                     fieldIn.getCssValue("border-top-color"),
                     "rgba(148, 148, 148, 1)",
