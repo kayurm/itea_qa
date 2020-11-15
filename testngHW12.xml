@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Lesson 12" verbose="1" parallel="classes" thread-count="2">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"/>
+    </listeners>
+    <test name="Docker?">
+        <classes>
+            <class name="test.java.tests.DummyTest"/>
+            <class name="test.java.tests.SearchTest"/>
+        </classes>
+    </test>
+</suite>
