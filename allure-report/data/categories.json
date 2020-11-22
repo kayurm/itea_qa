@@ -1,0 +1,60 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected [www.google.com] but found [https://www.amazon.com/]",
+      "children" : [ {
+        "name" : "simpleFailingTest",
+        "uid" : "80ca7eea29f18264",
+        "parentUid" : "7be6d1b0dd7ee2dca3ae77d55fc4a63b",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605989565598,
+          "stop" : 1605989566188,
+          "duration" : 590
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7be6d1b0dd7ee2dca3ae77d55fc4a63b"
+    }, {
+      "name" : "expected [2] but found [1]",
+      "children" : [ {
+        "name" : "someFailingTestsWithDataProvider",
+        "uid" : "a34e75a0d55bd423",
+        "parentUid" : "54f9db8d95899b66108783389d5d9864",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605989581375,
+          "stop" : 1605989581893,
+          "duration" : 518
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "1" ]
+      } ],
+      "uid" : "54f9db8d95899b66108783389d5d9864"
+    }, {
+      "name" : "expected [2] but found [3]",
+      "children" : [ {
+        "name" : "someFailingTestsWithDataProvider",
+        "uid" : "7d1bfbc9369728df",
+        "parentUid" : "5774c34af647b05939a52eac9e397949",
+        "status" : "failed",
+        "time" : {
+          "start" : 1605989603970,
+          "stop" : 1605989604488,
+          "duration" : 518
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "3" ]
+      } ],
+      "uid" : "5774c34af647b05939a52eac9e397949"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

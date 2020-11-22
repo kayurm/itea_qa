@@ -4,3 +4,5 @@ auto_itea.iml
 main/resources/
 logs/
 screenshot/
+src/test/resources/cred.properties
+allure-results/

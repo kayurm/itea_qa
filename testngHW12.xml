@@ -4,10 +4,11 @@
         <listener class-name="test.java.utils.Listener"/>
         <listener class-name="test.java.utils.AnnotationTransformer"/>
     </listeners>
-    <test name="Docker?">
+    <test name="Three tests">
         <classes>
             <class name="test.java.tests.DummyTest"/>
             <class name="test.java.tests.SearchTest"/>
+            <class name="test.java.tests.CreateAccountTest"/>
         </classes>
     </test>
 </suite>

@@ -1,0 +1,102 @@
+{
+  "uid" : "569a15b1939dd8f7",
+  "name" : "positiveTest",
+  "fullName" : "test.java.tests.DummyTest.positiveTest",
+  "historyId" : "8a34ec9b29efb1e0fba55a2b00445fb4",
+  "time" : {
+    "start" : 1605989550663,
+    "stop" : 1605989550672,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1605989541591,
+      "stop" : 1605989550660,
+      "duration" : 9069
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1605989550681,
+      "stop" : 1605989551430,
+      "duration" : 749
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "positiveTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lesson 12"
+  }, {
+    "name" : "suite",
+    "value" : "Three tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "host",
+    "value" : "XPS7"
+  }, {
+    "name" : "thread",
+    "value" : "31136@XPS7.TestNG-test=Three tests-1(17)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7e08fa820e08550c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605988923485,
+        "stop" : 1605988923501,
+        "duration" : 16
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "569a15b1939dd8f7.json",
+  "parameterValues" : [ ]
+}

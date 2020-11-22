@@ -1,0 +1,95 @@
+{
+  "uid" : "5cd3ac593b2b8535",
+  "name" : "someFailingTestsWithDataProvider",
+  "fullName" : "test.java.tests.DummyTest.someFailingTestsWithDataProvider",
+  "historyId" : "2ccbe5cfac0c8e40a6cdb233c58988d9",
+  "time" : {
+    "start" : 1605988961724,
+    "stop" : 1605988961725,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1605988955150,
+      "stop" : 1605988961719,
+      "duration" : 6569
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1605988961728,
+      "stop" : 1605988962427,
+      "duration" : 699
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "someFailingTestsWithDataProvider"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lesson11"
+  }, {
+    "name" : "suite",
+    "value" : "Failing dummy tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "test.java.tests.DummyTest"
+  }, {
+    "name" : "host",
+    "value" : "XPS7"
+  }, {
+    "name" : "thread",
+    "value" : "32076@XPS7.TestNG-test=Failing dummy tests-1(17)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "2"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5cd3ac593b2b8535.json",
+  "parameterValues" : [ "2" ]
+}

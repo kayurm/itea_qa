@@ -1,0 +1,129 @@
+{
+  "uid" : "f3ae292be50dfe36",
+  "name" : "verifyLaptopFilterTest",
+  "fullName" : "test.java.tests.LaptopBrandFilterTest.verifyLaptopFilterTest",
+  "historyId" : "7beb782c78a760bbbe993d261c582f4d",
+  "time" : {
+    "start" : 1605989728396,
+    "stop" : 1605989737029,
+    "duration" : 8633
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initTest",
+    "time" : {
+      "start" : 1605989728393,
+      "stop" : 1605989728393,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "getFilterValues",
+    "time" : {
+      "start" : 1605989570759,
+      "stop" : 1605989579379,
+      "duration" : 8620
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1605989721574,
+      "stop" : 1605989728391,
+      "duration" : 6817
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1605989737034,
+      "stop" : 1605989737819,
+      "duration" : 785
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyLaptopFilterTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lesson 12"
+  }, {
+    "name" : "suite",
+    "value" : "Three tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "host",
+    "value" : "XPS7"
+  }, {
+    "name" : "thread",
+    "value" : "31136@XPS7.TestNG-test=Three tests-2(18)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "jumper"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f3ae292be50dfe36.json",
+  "parameterValues" : [ "jumper" ]
+}
