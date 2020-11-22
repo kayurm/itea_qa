@@ -1,0 +1,129 @@
+{
+  "uid" : "34aa479e93857f40",
+  "name" : "verifyLaptopFilterTest",
+  "fullName" : "test.java.tests.LaptopBrandFilterTest.verifyLaptopFilterTest",
+  "historyId" : "b04b55c88025f2e0241536903075c5f3",
+  "time" : {
+    "start" : 1605989600627,
+    "stop" : 1605989607939,
+    "duration" : 7312
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1605989593893,
+      "stop" : 1605989600624,
+      "duration" : 6731
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "initTest",
+    "time" : {
+      "start" : 1605989600626,
+      "stop" : 1605989600626,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "getFilterValues",
+    "time" : {
+      "start" : 1605989570759,
+      "stop" : 1605989579379,
+      "duration" : 8620
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1605989607940,
+      "stop" : 1605989608634,
+      "duration" : 694
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyLaptopFilterTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lesson 12"
+  }, {
+    "name" : "suite",
+    "value" : "Three tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "test.java.tests.LaptopBrandFilterTest"
+  }, {
+    "name" : "host",
+    "value" : "XPS7"
+  }, {
+    "name" : "thread",
+    "value" : "31136@XPS7.TestNG-test=Three tests-2(18)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Acer"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "34aa479e93857f40.json",
+  "parameterValues" : [ "Acer" ]
+}

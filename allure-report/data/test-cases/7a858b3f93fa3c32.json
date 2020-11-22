@@ -1,0 +1,110 @@
+{
+  "uid" : "7a858b3f93fa3c32",
+  "name" : "searchResultContainsIphoneOnlyTest",
+  "fullName" : "test.java.tests.SearchTest.searchResultContainsIphoneOnlyTest",
+  "historyId" : "a03d4385517b4f0082dbe8ef3dd0a22b",
+  "time" : {
+    "start" : 1605989549366,
+    "stop" : 1605989556052,
+    "duration" : 6686
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1605989541591,
+      "stop" : 1605989549129,
+      "duration" : 7538
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "initTest",
+    "time" : {
+      "start" : 1605989549277,
+      "stop" : 1605989549290,
+      "duration" : 13
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1605989556054,
+      "stop" : 1605989556765,
+      "duration" : 711
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "test.java.tests.SearchTest"
+  }, {
+    "name" : "testClass",
+    "value" : "test.java.tests.SearchTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "searchResultContainsIphoneOnlyTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lesson 12"
+  }, {
+    "name" : "suite",
+    "value" : "Three tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "test.java.tests.SearchTest"
+  }, {
+    "name" : "host",
+    "value" : "XPS7"
+  }, {
+    "name" : "thread",
+    "value" : "31136@XPS7.TestNG-test=Three tests-2(18)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7a858b3f93fa3c32.json",
+  "parameterValues" : [ ]
+}
