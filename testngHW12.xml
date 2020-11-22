@@ -6,9 +6,9 @@
     </listeners>
     <test name="Three tests">
         <classes>
-            <class name="test.java.tests.DummyTest"/>
             <class name="test.java.tests.SearchTest"/>
             <class name="test.java.tests.CreateAccountTest"/>
+            <class name="test.java.tests.LaptopBrandFilterTest"/>
         </classes>
     </test>
 </suite>
