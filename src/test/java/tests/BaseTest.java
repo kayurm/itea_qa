@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -38,7 +39,8 @@ public abstract class BaseTest {
 //        EdgeOptions edgeOptions = new EdgeOptions();
 //        driver=new EdgeDriver(edgeOptions);
 
-        ChromeOptions chromeOptions = new ChromeOptions();
+        //FOR SELENIUM GRID
+        //ChromeOptions chromeOptions = new ChromeOptions();
         FirefoxOptions ffOptions = new FirefoxOptions();
         try {
             //driver = new RemoteWebDriver(new URL("http://ec2-3-250-219-25.eu-west-1.compute.amazonaws.com:4444/wd/hub"), ffOptions);
@@ -75,5 +77,4 @@ public abstract class BaseTest {
     private byte[] attachScreen() {
         return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
-
 }

@@ -1,18 +1,19 @@
 package test.java.tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import main.java.pages.landing.MainPage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import main.java.pages.landing.MainPage;
 
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
-public class LaptopBrandFilterTest extends BaseTest {
+public class LaptopPickRandomBrandTest extends BaseTest{
 
     private MainPage mainPage;
     private List<String> brandList;
@@ -36,19 +37,15 @@ public class LaptopBrandFilterTest extends BaseTest {
         mainPage = new MainPage(driver);
     }
 
-    @DataProvider(name = "brandsProvider")
-    public Object[][] dataProvider() {
-        Object[][] result = new Object[brandList.size()][1];
-        for (int i = 0; i < brandList.size(); i++) {
-            result[i][0] = brandList.get(i);
-        }
-        return result;
-    }
-
+    @Description("Set filter by a random laptop brand" +
+            " and verify search result contains only that brand")
     @Severity(SeverityLevel.CRITICAL)
-    @Test(dataProvider = "brandsProvider")
-    public void verifyLaptopFilterTest(String brand) {
+    @Test
+    public void verifyLaptopFilterTest() {
         LOG.info("Test -> notebook filters verification");
+        int max=brandList.size()-1;
+        int rand = (int)(Math.random() * (max + 1));
+        String brand = brandList.get(rand);
 
         assertTrue(mainPage
                 .searchFor(searchValue)

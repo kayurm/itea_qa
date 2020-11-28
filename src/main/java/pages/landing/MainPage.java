@@ -1,5 +1,6 @@
 package main.java.pages.landing;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -31,12 +32,14 @@ public class MainPage extends main.java.pages.landing.Header {
         super(driver);
     }
 
+    @Step("Open today's deals")
     public MainPage openTodaysDeals() {
         clickIfDisplayed(todaysDealsButton);
         assertTrue(driver.findElement(dealsAndPromotionsLabel).isDisplayed());
         return this;
     }
 
+    @Step("Get min price")
     public float[] getMinMaxPrice(int dealNumber) {
         float minPrice = 0;
         float maxPrice = 0;
@@ -54,6 +57,7 @@ public class MainPage extends main.java.pages.landing.Header {
         return new float[]{minPrice, maxPrice};
     }
 
+    @Step("Open sign in page")
     public SigninPage openSigninPage() {
         LOG.info("Open sign in page");
         SigninPage signInPage = new SigninPage(driver);
@@ -67,6 +71,7 @@ public class MainPage extends main.java.pages.landing.Header {
         return signInPage;
     }
 
+    @Step("Perform search for {0}")
     public MainPage searchFor(String searchValue) {
         LOG.info("Searching for: " + searchValue);
         elem = driver.findElement(searchField);
@@ -75,6 +80,7 @@ public class MainPage extends main.java.pages.landing.Header {
         return this;
     }
 
+    @Step("Verify that search results contain value {0}")
     public boolean verifyEachSearchResultContainsValue(String value) {
         LOG.info("Verifying that returned search result contains value: " + value);
         List<WebElement> searchResult = driver.findElements(searchResultListBy);
@@ -112,7 +118,7 @@ public class MainPage extends main.java.pages.landing.Header {
         return filterValuesList;
     }
 
-
+    @Step("Setting filter by {0}")
     public MainPage setFilterBy(String filterValue) {
         LOG.info("Setting filter by value: " + filterValue);
 

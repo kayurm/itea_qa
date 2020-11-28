@@ -1,4 +1,4 @@
-package lesson2;
+package main.java.lesson2;
 
 /**
  * KATERYNA YURMANOVYCH
