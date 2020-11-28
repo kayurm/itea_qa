@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Lesson 13 Allure">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"/>
+    </listeners>
+    <test name="Three tests">
+        <classes>
+            <class name="test.java.tests.LaptopPickRandomBrandTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,5 +1,6 @@
 package main.java.pages.signin;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,12 +34,14 @@ public class CreateAccountPage extends BasePage {
         return createAccountLabel;
     }
 
+    @Step("Click Create accout")
     public CreateAccountPage clickCreateYourAmazonAccount(){
         LOG.info("Click create your amazon account");
         driver.findElement(createYourAmazonAccountButton).click();
         return this;
     }
 
+    @Step("Fill fields and submit")
     public CreateAccountPage fillFieldsAndClickCreate(String name, String email, String password, String reenterPassword){
         LOG.info("Fill fields and click create");
         driver.findElement(nameField).sendKeys(name);
@@ -77,6 +80,7 @@ public class CreateAccountPage extends BasePage {
         }
     }
 
+    @Step("Validate field Name")
     public CreateAccountPage validateNameField(String name) throws InterruptedException {
         LOG.info("Validate name field");
         validateField(
@@ -85,6 +89,8 @@ public class CreateAccountPage extends BasePage {
                 name);
         return this;
     }
+
+    @Step("Validate field Email")
     public CreateAccountPage validateEmailField(String email) throws InterruptedException {
         LOG.info("Validate email field");
         validateField(
@@ -94,6 +100,7 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
+    @Step("Validate field Password")
     public CreateAccountPage validatePasswordField(String password) throws InterruptedException {
         LOG.info("Validate password field");
         validateField(
@@ -103,6 +110,7 @@ public class CreateAccountPage extends BasePage {
         return this;
     }
 
+    @Step("Validate field reenter Password")
     public CreateAccountPage validateReenterPasswordField(String reenterPassword) throws InterruptedException {
         LOG.info("Validate reenter password field");
         validateField(

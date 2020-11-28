@@ -1,4 +1,4 @@
-package lesson1Advanced;
+package main.java.lesson1Advanced;
 
 /* Мое имя
 Вывести на экран любой символ пирамидкой высотой в 10 строк.
